@@ -21,10 +21,14 @@ sourceCompatibility = 1.8
 
 repositories {
 	mavenCentral()
+	maven {
+		url "https://plugins.gradle.org/m2/"
+	}
 }
 
-
 dependencies {
+	annotationProcessor("org.projectlombok:lombok:1.16.20")
+	compileOnly("org.projectlombok:lombok:1.16.20")
 	compile('org.springframework.boot:spring-boot-starter-web')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }

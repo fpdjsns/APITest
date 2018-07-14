@@ -1,7 +1,10 @@
 package com.apitest.demo;
 
+import com.apitest.model.MemberApiResponse;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.lang.reflect.Member;
 
 @RestController
 public class GetTest {
@@ -20,7 +23,11 @@ public class GetTest {
 
     // localhost:8080/testMember
     @GetMapping("/{member}")
-    public ResponseEntity<String> pathVariableTest(@PathVariable String member){
-        return ResponseEntity.ok(member);
+    public ResponseEntity<MemberApiResponse> pathVariableTest(@PathVariable String member){
+        MemberApiResponse response = new MemberApiResponse();
+        response.setMemberName(member);
+        // dummy age
+        response.setAge(10);
+        return ResponseEntity.ok(response);
     }
 }
