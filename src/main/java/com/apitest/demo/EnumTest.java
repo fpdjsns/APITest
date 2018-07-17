@@ -1,5 +1,7 @@
 package com.apitest.demo;
 
+import com.apitest.model.Calculator;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,28 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/enum")
 public class EnumTest {
 
-    @GetMapping("/add")
-    public ResponseEntity<?> getAdd(@RequestParam int a, @RequestParam int b){
-        int response = a + b;
+    @GetMapping("/calculates")
+    public ResponseEntity<?> getCalculates(@RequestParam int a,
+                                           @RequestParam int b,
+                                           @RequestParam Calculator calculator){
+        int response = calculator.calculate(a, b);
         return ResponseEntity.ok(response);
     }
-
-    @GetMapping("/sub")
-    public ResponseEntity<?> getSub(@RequestParam int a, @RequestParam int b){
-        int response = a - b;
-        return ResponseEntity.ok(response);
-    }
-
-    @GetMapping("/mul")
-    public ResponseEntity<?> getMul(@RequestParam int a, @RequestParam int b){
-        int response = a * b;
-        return ResponseEntity.ok(response);
-    }
-
-    @GetMapping("/div")
-    public ResponseEntity<?> getDiv(@RequestParam int a, @RequestParam int b){
-        int response = a / b;
-        return ResponseEntity.ok(response);
-    }
-
 }
