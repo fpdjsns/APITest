@@ -6,6 +6,9 @@ buildscript {
 		mavenCentral()
 	}
 	dependencies {
+		classpath 'org.junit.platform:junit-platform-gradle-plugin:1.0.1'
+
+		// junit
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
 	}
 }
@@ -14,6 +17,9 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
+
+// junit
+apply plugin: 'org.junit.platform.gradle.plugin'
 
 group = 'com.APITest'
 version = '0.0.1-SNAPSHOT'
@@ -31,4 +37,8 @@ dependencies {
 	compileOnly("org.projectlombok:lombok:1.16.20")
 	compile('org.springframework.boot:spring-boot-starter-web')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
+
+	// junit
+	testCompile("org.junit.jupiter:junit-jupiter-api:5.0.1")
+	testRuntime("org.junit.jupiter:junit-jupiter-engine:5.0.1")
 }
