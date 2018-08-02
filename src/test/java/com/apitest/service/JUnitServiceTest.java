@@ -1,4 +1,4 @@
-package com.apitest.Service;
+package com.apitest.service;
 
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;

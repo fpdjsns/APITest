@@ -1,4 +1,4 @@
-package com.apitest.demo;
+package com.apitest.controller;
 
 import com.apitest.model.MemberApiResponse;
 import org.springframework.http.ResponseEntity;

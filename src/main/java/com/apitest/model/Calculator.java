@@ -1,6 +1,6 @@
 package com.apitest.model;
 
-import com.apitest.Service.CalculateService;
+import com.apitest.service.CalculateService;
 
 public enum Calculator implements CalculateService{
     ADD("ADD"){

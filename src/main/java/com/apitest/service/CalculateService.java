@@ -1,4 +1,4 @@
-package com.apitest.Service;
+package com.apitest.service;
 
 public interface CalculateService {
 

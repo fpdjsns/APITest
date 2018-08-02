@@ -1,4 +1,4 @@
-package com.apitest.demo;
+package com.apitest.controller;
 
 import com.apitest.model.Calculator;
 import lombok.extern.slf4j.Slf4j;
