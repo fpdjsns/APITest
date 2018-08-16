@@ -7,16 +7,25 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 @Controller
 @RequestMapping("/files")
 public class FileController {
 
-    @Autowired
-    FileService fileService;
+  @Autowired
+  FileService fileService;
 
-    @PostMapping
-    public ResponseEntity<String> upload(MultipartFile file){
-        String result = fileService.upload(file);
-        return ResponseEntity.ok(result);
-    }
+  @PostMapping
+  public ResponseEntity<String> uploadFile(MultipartFile file) {
+    String result = fileService.upload(file);
+    return ResponseEntity.ok(result);
+  }
+
+  @GetMapping
+  public ResponseEntity downloadFile(HttpServletRequest request, HttpServletResponse response,
+      @PathVariable String fileName) {
+    return ResponseEntity.ok().build();
+  }
 }
