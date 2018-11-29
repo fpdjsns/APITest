@@ -1,8 +1,4 @@
 buildscript {
-	apply plugin: 'war'
-	war{
-		baseName = 'build'
-	}
 	ext {
 		springBootVersion = '2.0.3.RELEASE'
 	}
@@ -24,6 +20,12 @@ apply plugin: 'io.spring.dependency-management'
 
 // junit
 apply plugin: 'org.junit.platform.gradle.plugin'
+
+
+apply plugin: 'war'
+war{
+	baseName = 'build'
+}
 
 group = 'com.APITest'
 version = '0.0.1-SNAPSHOT'
